@@ -1,0 +1,10 @@
+body {
+  background: rgb(39, 39, 39);
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}

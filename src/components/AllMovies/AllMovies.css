@@ -1,0 +1,8 @@
+.allMovies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+  gap: 1rem;
+}
