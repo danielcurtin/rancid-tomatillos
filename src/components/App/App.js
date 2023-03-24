@@ -11,7 +11,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies,
+      error: false,
+      movies: [],
       view: 'all',
       clicked: ''
     };
@@ -19,6 +20,19 @@ class App extends Component {
 
   selectMovie = id => {
     this.setState({ view: 'single', clicked: movieData.movies.find(movie => movie.id === id) });
+  };
+
+  componentDidMount = () => {
+    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+    .then(res => {
+      if (res.ok) {
+        return res.json()
+      } else {
+        throw new Error(res.status)
+      }
+    })
+    .then(data => this.setState({ movies: data.movies }))
+    .catch(() => this.setState({ error: true }))
   };
 
   render() {
