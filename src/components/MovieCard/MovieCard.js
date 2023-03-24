@@ -1,12 +1,12 @@
 import React from "react";
 import "./MovieCard.css";
 
-const MovieCard = (props) => {
+const MovieCard = ({posterPath, title, averageRating, selectMovie, id}) => {
   return (
-    <div className="movieCard">
-      <img src={props.posterPath} />
-      <h2>{props.title}</h2>
-      <p>{props.averageRating.toFixed(2)} 🍿</p>
+    <div className="movieCard" onClick={() => selectMovie(id)}>
+      <img src={posterPath} />
+      <h2>{title}</h2>
+      <p>{averageRating.toFixed(2)} 🍿</p>
     </div>
   );
 };
