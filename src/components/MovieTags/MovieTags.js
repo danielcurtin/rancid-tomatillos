@@ -1,11 +1,11 @@
 import React from "react";
 import './MovieTags.css';
 
-const MovieTags = ({ runtime, genres, budget, revenue }) => {
-    const genreList = genres.map(genre => <p>{genre}</p>)
+const MovieTags = ({ runtime, genres, budget, revenue, id }) => {
+    const genreList = genres.map((genre, index) => <p key={index}>{genre}</p>)
     
     return (
-        <div className="movieTags">
+        <div className="movieTags" key={id}>
             <div>
                 <h3>Runtime</h3>
                 <p>{runtime} minutes</p>

@@ -43,7 +43,7 @@ class SingleMovie extends Component {
                 <div className="singleDetails">
                     <img src={this.state.movie.backdrop_path} />
                     <MovieDesc title={this.state.movie.title} tagline={this.state.movie.tagline} description={this.state.movie.overview} />
-                    <MovieTags runtime={this.state.movie.runtime} genres={this.state.movie.genres} budget={this.state.movie.budget} revenue={this.state.movie.revenue} />
+                    <MovieTags runtime={this.state.movie.runtime} genres={this.state.movie.genres} budget={this.state.movie.budget} revenue={this.state.movie.revenue} id={this.state.movie.id} />
                 </div>
             </section>
         );

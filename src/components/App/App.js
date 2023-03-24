@@ -1,7 +1,6 @@
 import './App.css';
 
 import React, { Component } from 'react';
-import movieData from '../../mockdata';
 
 import Header from '../Header/Header';
 import AllMovies from '../AllMovies/AllMovies';
