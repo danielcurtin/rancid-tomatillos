@@ -19,7 +19,7 @@ class App extends Component {
   };
 
   selectMovie = id => {
-    this.setState({ view: 'single', clicked: movieData.movies.find(movie => movie.id === id) });
+    this.setState({ view: 'single', clicked: id });
   };
 
   componentDidMount = () => {
