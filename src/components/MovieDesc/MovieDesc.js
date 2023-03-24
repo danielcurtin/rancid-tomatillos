@@ -1,14 +1,14 @@
 import React from "react";
 import './MovieDesc.css';
 
-const MovieDesc = () => {
+const MovieDesc = ({ title, tagline, description }) => {
     return (
         <div className="movieDesc">
-            <h2>Title</h2>
-            <h3>Tagline</h3>
-            <p>Description</p>
+            <h2>{title}</h2>
+            <h3>{tagline}</h3>
+            <p>{description}</p>
         </div>
-    )
+    );
 };
 
 export default MovieDesc
