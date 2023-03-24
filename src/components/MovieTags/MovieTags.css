@@ -1,0 +1,11 @@
+.movieTags {
+  display: flex;
+  flex-flow: wrap;
+  column-gap: 1rem;
+  height: 30%;
+}
+
+.movieTags > div {
+  width: 40%;
+  height: 50%;
+}
