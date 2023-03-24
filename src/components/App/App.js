@@ -3,22 +3,29 @@ import './App.css';
 import React, { Component } from 'react';
 import movieData from '../../mockdata';
 
-import AllMovies from '../AllMovies/AllMovies';
 import Header from '../Header/Header';
+import AllMovies from '../AllMovies/AllMovies';
+import SingleMovie from '../SingleMovie/SingleMovie';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies
+      movies: movieData.movies,
+      view: 'all',
+      clicked: ''
     };
+  };
+
+  selectMovie = id => {
+    this.setState({ view: 'single', clicked: movieData.movies.find(movie => movie.id === id) });
   };
 
   render() {
     return (
       <main>
         <Header />
-        <AllMovies movies={this.state.movies} />
+        {this.state.view === 'all' ? <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> : <SingleMovie movie={this.state.clicked} />}
       </main>
     );
   };

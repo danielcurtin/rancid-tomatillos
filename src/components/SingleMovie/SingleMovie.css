@@ -1,0 +1,30 @@
+.singleView {
+  display: flex;
+  height: 80vh;
+  width: 95%;
+  gap: 2rem;
+}
+
+.singlePoster {
+  width: 30%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.singlePoster > img {
+  height: 80%;
+}
+
+.singleDetails {
+  width: 66%;
+}
+
+.singleDetails > img {
+  height: 20%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 7.5%;
+  opacity: 0.7;
+}

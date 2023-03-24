@@ -1,0 +1,24 @@
+.movieTags {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  height: 30%;
+}
+
+.movieTags > div {
+  width: 40%;
+  height: 50%;
+}
+
+.movieTags > div > h3 {
+  text-decoration: underline;
+}
+
+.genres {
+  display: flex;
+  gap: 1rem;
+}
+
+.genres > p {
+  margin: 0;
+}
