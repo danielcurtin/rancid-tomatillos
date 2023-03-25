@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 import Header from '../Header/Header';
 import AllMovies from '../AllMovies/AllMovies';
+import Featured from '../Featured/Featured';
 import SingleMovie from '../SingleMovie/SingleMovie';
 
 class App extends Component {
@@ -38,7 +39,7 @@ class App extends Component {
     return (
       <main>
         <Header />
-        {this.state.view === 'all' ? <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> : <SingleMovie movie={this.state.clicked} />}
+        {this.state.view === 'all' ? <div><Featured movies={this.state.movies} selectMovie={this.selectMovie} /> <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> </div>: <SingleMovie movie={this.state.clicked} />}
       </main>
     );
   };
