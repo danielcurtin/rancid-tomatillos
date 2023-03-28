@@ -10,7 +10,7 @@ class SingleMovie extends Component {
         this.state = {
             error: false,
             loading: true,
-            id: props.movie,
+            id: props.id,
             movie: undefined
         }
     }
@@ -31,6 +31,7 @@ class SingleMovie extends Component {
     }
 
     render() {
+        console.log(this.props)
         if (this.state.loading) {
             return
         }
