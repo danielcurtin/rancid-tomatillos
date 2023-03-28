@@ -1,6 +1,7 @@
 import './App.css';
 
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import AllMovies from '../AllMovies/AllMovies';
@@ -35,11 +36,22 @@ class App extends Component {
     .catch(() => this.setState({ error: true }))
   };
 
+  renderHome() {
+    return (
+      <div>
+        <Featured movies={this.state.movies} selectMovie={this.selectMovie} /> 
+        <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> 
+      </div>
+    )
+  }
+
   render() {
     return (
       <main>
         <Header />
-        {this.state.view === 'all' ? <div><Featured movies={this.state.movies} selectMovie={this.selectMovie} /> <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> </div>: <SingleMovie movie={this.state.clicked} />}
+        {/* {this.state.view === 'all' ? <div><Featured movies={this.state.movies} selectMovie={this.selectMovie} /> <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> </div>: <SingleMovie movie={this.state.clicked} />} */}
+        <Route exact path='/' render={ () => this.renderHome() } />
+        
       </main>
     );
   };
