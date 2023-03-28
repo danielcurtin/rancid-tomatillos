@@ -1,7 +1,7 @@
 import './App.css';
 
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import AllMovies from '../AllMovies/AllMovies';
@@ -14,14 +14,13 @@ class App extends Component {
     this.state = {
       error: false,
       movies: [],
-      view: 'all',
       clicked: ''
     };
   };
 
-  selectMovie = id => {
-    this.setState({ view: 'single', clicked: id });
-  };
+  // selectMovie = id => {
+  //   this.setState({ clicked: id });
+  // };
 
   componentDidMount = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
@@ -36,22 +35,35 @@ class App extends Component {
     .catch(() => this.setState({ error: true }))
   };
 
-  renderHome() {
-    return (
-      <div>
-        <Featured movies={this.state.movies} selectMovie={this.selectMovie} /> 
-        <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> 
-      </div>
-    )
-  }
-
   render() {
+    console.log(this.state.clicked)
     return (
       <main>
         <Header />
         {/* {this.state.view === 'all' ? <div><Featured movies={this.state.movies} selectMovie={this.selectMovie} /> <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> </div>: <SingleMovie movie={this.state.clicked} />} */}
-        <Route exact path='/' render={ () => this.renderHome() } />
-        
+        {/* <Switch>
+          <Route path="/:id">
+            <SingleMovie id='724495' />
+          </Route>
+          <Route exact path='/'>
+            <Featured movies={this.state.movies} selectMovie={this.selectMovie} /> 
+            <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> 
+          </Route>
+        </Switch> */}
+        <Switch>
+          <Route exact path='/:id' render={({match}) => {
+            let movieId = parseInt(match.params.id)
+            return <SingleMovie id={movieId} />
+          }} />
+          <Route exact path='/' render={ () => {
+            return (
+              <div>
+                <Featured movies={this.state.movies} selectMovie={this.selectMovie} /> 
+                <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
+              </div>
+            )
+          }} />
+        </Switch>
       </main>
     );
   };
