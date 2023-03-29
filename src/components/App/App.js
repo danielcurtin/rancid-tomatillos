@@ -18,10 +18,6 @@ class App extends Component {
     };
   };
 
-  // selectMovie = id => {
-  //   this.setState({ clicked: id });
-  // };
-
   componentDidMount = () => {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
     .then(res => {
@@ -36,20 +32,17 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.clicked)
+    if (this.state.error) {
+      return (
+        <main>
+          <Header /> 
+          <h2>Something went wrong, please try again.</h2>
+        </main>
+      )
+    }
     return (
       <main>
         <Header />
-        {/* {this.state.view === 'all' ? <div><Featured movies={this.state.movies} selectMovie={this.selectMovie} /> <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> </div>: <SingleMovie movie={this.state.clicked} />} */}
-        {/* <Switch>
-          <Route path="/:id">
-            <SingleMovie id='724495' />
-          </Route>
-          <Route exact path='/'>
-            <Featured movies={this.state.movies} selectMovie={this.selectMovie} /> 
-            <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} /> 
-          </Route>
-        </Switch> */}
         <Switch>
           <Route exact path='/:id' render={({match}) => {
             let movieId = parseInt(match.params.id)

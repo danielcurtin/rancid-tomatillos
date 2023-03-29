@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./MovieCard.css";
 
-const MovieCard = ({posterPath, title, averageRating, selectMovie, id}) => {
+const MovieCard = ({posterPath, title, averageRating, id}) => {
   return (
     <Link to={`/${id}`}>
       <div className="movieCard">
