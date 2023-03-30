@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.featured > h2 {
+  font-size: 2rem;
+}
+
 .featured > div {
   display: flex;
   justify-content: center;
