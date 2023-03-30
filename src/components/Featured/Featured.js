@@ -9,7 +9,7 @@ const Featured = ({ movies }) => {
   return (
     <div className="featured">
       <h2>Featured</h2>
-      <div>
+      <div className="featuredCards">
         {featuredCards[0]}
         {featuredCards[1]}
         {featuredCards[2]}
