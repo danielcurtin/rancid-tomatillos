@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import './MovieDesc.css';
 
 const MovieDesc = ({ title, tagline, description }) => {
@@ -12,3 +13,9 @@ const MovieDesc = ({ title, tagline, description }) => {
 };
 
 export default MovieDesc
+
+MovieDesc.propTypes = {
+    title: PropTypes.string.isRequired,
+    tagline: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+}

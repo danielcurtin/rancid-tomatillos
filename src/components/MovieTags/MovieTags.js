@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import './MovieTags.css';
 
 const MovieTags = ({ runtime, genres, budget, revenue, id }) => {
@@ -29,3 +30,11 @@ const MovieTags = ({ runtime, genres, budget, revenue, id }) => {
 };
 
 export default MovieTags;
+
+MovieTags.propTypes = {
+    runtime: PropTypes.number.isRequired,
+    genres: PropTypes.array.isRequired,
+    budget: PropTypes.number.isRequired,
+    revenue: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired
+}

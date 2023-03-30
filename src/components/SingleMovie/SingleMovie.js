@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import './SingleMovie.css';
 
 import MovieDesc from "../MovieDesc/MovieDesc";
@@ -37,8 +38,7 @@ class SingleMovie extends Component {
             return
         }
         return (
-            <section className="singleView">
-                
+            <section className="singleView">             
                 <div className="singlePoster">
                     <img src={this.state.movie.poster_path} />
                     <h2>{this.state.movie.average_rating} / 10</h2>
@@ -54,3 +54,7 @@ class SingleMovie extends Component {
 };
 
 export default SingleMovie;
+
+SingleMovie.propTypes = {
+    id: PropTypes.number.isRequired
+}

@@ -51,8 +51,8 @@ class App extends Component {
           <Route exact path='/' render={ () => {
             return (
               <div>
-                <Featured movies={this.state.movies} selectMovie={this.selectMovie} /> 
-                <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
+                <Featured movies={this.state.movies} /> 
+                <AllMovies movies={this.state.movies} />
               </div>
             )
           }} />
