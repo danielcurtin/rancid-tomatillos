@@ -31,12 +31,14 @@ class SingleMovie extends Component {
     }
 
     render() {
-        console.log(this.props)
-        if (this.state.loading) {
+        if (this.state.error) {
+            return <h2>Something went wrong, please try again.</h2>
+        } else if (this.state.loading) {
             return
         }
         return (
             <section className="singleView">
+                
                 <div className="singlePoster">
                     <img src={this.state.movie.poster_path} />
                     <h2>{this.state.movie.average_rating} / 10</h2>
