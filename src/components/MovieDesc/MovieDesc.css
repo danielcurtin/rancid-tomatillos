@@ -3,3 +3,21 @@
   flex-flow: column;
   height: 50%;
 }
+
+.movieDesc > h2,
+.movieDesc > h3 {
+  text-align: center;
+}
+
+.movieDesc > h2 {
+  font-size: 2.5rem;
+}
+
+.movieDesc > h3 {
+  font-size: 1.5rem;
+  color: grey;
+}
+
+.movieDesc > p {
+  margin: 1rem 1rem;
+}

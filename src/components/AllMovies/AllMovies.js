@@ -9,9 +9,12 @@ const AllMovies = ({ movies }) => {
   });
   
   return (
-    <div className="allMovies">
-      {movieCards}
-    </div>
+    <>
+      <h2 className="recentHeader">Recent Movies</h2>
+      <section className="allMovies">
+        {movieCards}
+      </section>
+    </>
   );
 };
 

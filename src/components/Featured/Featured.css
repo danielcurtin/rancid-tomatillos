@@ -6,11 +6,27 @@
   align-items: center;
 }
 
-.featured > div {
+.featured > h2 {
+  font-size: 2rem;
+}
+
+.featuredCards {
   display: flex;
+  flex-flow: wrap;
   justify-content: center;
   width: 100%;
   height: 100%;
   gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.featuredCards > a, 
+.featuredCards > a > .movieCard {
+  height: 450px;
+  width: 250px;
+}
+
+.featuredCards > a > .movieCard > h2,
+.featuredCards > a > .movieCard > p {
+  font-size: 1.2rem;
 }
