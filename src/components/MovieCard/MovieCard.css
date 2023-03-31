@@ -3,6 +3,11 @@
   width: 200px;
   background: black;
   color: white;
+  transition: scale 0.6s;
+}
+
+.movieCard:hover {
+  scale: 1.05;
 }
 
 .movieCard > img {

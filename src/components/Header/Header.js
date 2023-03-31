@@ -1,10 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import './Header.css';
 
 const Header = () => {
     return (
         <header>
-            <h1>Rancid Tomatillos</h1>
+            <NavLink to='/' style={{ textDecoration: 'none', color: "white" }}>
+                <h1>Rancid Tomatillos</h1>
+            </NavLink>
         </header>
     );
 };
